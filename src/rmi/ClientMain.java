@@ -45,8 +45,8 @@ public class ClientMain {
 					System.out.println("lookupallflights");
 					System.out.println("buyflight-id-seats");
 					System.out.println("lookupallhotels");
-					System.out.println("rif-to-from-price-clientname");
-					System.out.println("rih-where-seats-price-clientname");
+					System.out.println("arif-to-from-price-clientname");
+					System.out.println("arih-where-seats-price-clientname");
 					System.out.println("drif-to-from-price-clientname");
 					System.out.println("drih-where-seats-price-clientname");
 				}
@@ -59,11 +59,11 @@ public class ClientMain {
 				if (input.contains("lookupallhotels")) {
 					client.lookUpHotels(a);
 				}
-				if (input.contains("rif")) {
+				if (input.contains("arif")) {
 					client.registerInterestFlight(a, input.split("-")[1], input.split("-")[2],
 							Integer.valueOf(input.split("-")[3]), clientname);
 				}
-				if (input.contains("rih")) {
+				if (input.contains("arih")) {
 					client.registerInterestRooms(a, input.split("-")[1], Integer.valueOf(input.split("-")[2]),
 							Integer.valueOf(input.split("-")[3]), clientname);
 				}
