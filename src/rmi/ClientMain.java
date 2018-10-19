@@ -44,7 +44,9 @@ public class ClientMain {
 				if (input.contains("help")) {
 					System.out.println("lookupallflights");
 					System.out.println("buyflight-id-seats");
+					System.out.println("buyrooms-id-seats-startdate-enddate");
 					System.out.println("lookupallhotels");
+					System.out.println("lookupallpackages");
 					System.out.println("arif-to-from-price-clientname");
 					System.out.println("arih-where-seats-price-clientname");
 					System.out.println("drif-to-from-price-clientname");
@@ -53,38 +55,56 @@ public class ClientMain {
 					System.out.println("rpck-to-from-where-maxprice-seats-clientname");
 
 				}
+				if (input.contains("buyrooms")) {
+					client.buyRooms(a, Integer.valueOf(input.split("-")[1]), Integer.valueOf(input.split("-")[2]),
+							Long.valueOf(input.split("-")[3]), Long.valueOf(input.split("-")[4]));
+					continue;
+				}
 				if (input.contains("lookupallflights")) {
 					client.lookUpFlights(a);
+					continue;
+				}
+				if (input.contains("lookupallpackages")) {
+					client.lookUpPackages(a);
+					continue;
 				}
 				if (input.contains("buyflight-")) {
 					client.buyFlight(a, Integer.valueOf(input.split("-")[1]), Integer.valueOf(input.split("-")[2]));
+					continue;
 				}
 				if (input.contains("lookupallhotels")) {
 					client.lookUpHotels(a);
+					continue;
 				}
 				if (input.contains("arif")) {
 					client.registerInterestFlight(a, input.split("-")[1], input.split("-")[2],
 							Integer.valueOf(input.split("-")[3]), clientname);
+					continue;
 				}
 				if (input.contains("arih")) {
 					client.registerInterestRooms(a, input.split("-")[1], Integer.valueOf(input.split("-")[2]),
 							Integer.valueOf(input.split("-")[3]), clientname);
+					continue;
 				}
 				if (input.contains("drif")) {
 					client.removeFlightIntl(a, input.split("-")[1], input.split("-")[2],
 							Integer.valueOf(input.split("-")[3]), clientname);
+					continue;
 				}
 				if (input.contains("drih")) {
 					client.removeRoomsIntl(a, input.split("-")[1], Integer.valueOf(input.split("-")[2]),
 							Integer.valueOf(input.split("-")[3]), clientname);
+					continue;
 				}
 				if (input.contains("apck")) {
 					client.registerInterestPackage(a, input.split("-")[1], input.split("-")[2], input.split("-")[3],
 							Integer.valueOf(input.split("-")[4]), Integer.valueOf(input.split("-")[5]), clientname);
+					continue;
 				}
 				if (input.contains("rpck")) {
 					client.removeInterestPackage(a, input.split("-")[1], input.split("-")[2], input.split("-")[3],
 							Integer.valueOf(input.split("-")[4]), Integer.valueOf(input.split("-")[5]), clientname);
+					continue;
 				}
 
 			}

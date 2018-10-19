@@ -148,5 +148,14 @@ public class ClientImpl extends UnicastRemoteObject implements Client {
 		return true;
 		
 	}
+	@Override
+	public boolean lookUpPackages(Server a)throws RemoteException {
+		System.out.println("Looking up packages...");
+
+		for (String s : a.getPackages()) {
+			System.out.println(s);
+		}
+		return true;
+	}
 
 }

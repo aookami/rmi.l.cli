@@ -39,4 +39,6 @@ public interface Client extends Remote {
 	boolean removeInterestPackage(Server a, String to, String from, String where, int maxprice, int seats,
 			String client) throws RemoteException;
 
+	boolean lookUpPackages(Server a) throws RemoteException;
+
 }
