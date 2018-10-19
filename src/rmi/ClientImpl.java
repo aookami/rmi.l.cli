@@ -133,5 +133,20 @@ public class ClientImpl extends UnicastRemoteObject implements Client {
 		a.removeRoomsIntl(where, seats, maxprice, client);
 		return false;
 	}
+	@Override
+	public boolean registerInterestPackage(Server a, String to, String from, String where, int maxprice,
+					int seats, String client) throws RemoteException {
+		System.out.println("Registering new package interest");
+		a.addPackageInt(to, from, where, maxprice, seats, client);
+		return true;
+	}
+	@Override
+	public boolean removeInterestPackage(Server a, String to, String from, String where, int maxprice,
+			int seats, String client) throws RemoteException {
+		System.out.println("Removing package interest");
+		a.removePackageIntl(to, from,  where, maxprice, seats);
+		return true;
+		
+	}
 
 }

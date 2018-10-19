@@ -33,4 +33,10 @@ public interface Client extends Remote {
 
 	boolean removeRoomsIntl(Server a, String where, int seats, int maxprice, String client) throws RemoteException;
 
+	boolean registerInterestPackage(Server a, String to, String from, String where, int maxprice, int seats,
+			String client) throws RemoteException;
+
+	boolean removeInterestPackage(Server a, String to, String from, String where, int maxprice, int seats,
+			String client) throws RemoteException;
+
 }

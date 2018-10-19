@@ -49,6 +49,9 @@ public class ClientMain {
 					System.out.println("arih-where-seats-price-clientname");
 					System.out.println("drif-to-from-price-clientname");
 					System.out.println("drih-where-seats-price-clientname");
+					System.out.println("apck-to-from-where-maxprice-seats-clientname");
+					System.out.println("rpck-to-from-where-maxprice-seats-clientname");
+
 				}
 				if (input.contains("lookupallflights")) {
 					client.lookUpFlights(a);
@@ -75,7 +78,15 @@ public class ClientMain {
 					client.removeRoomsIntl(a, input.split("-")[1], Integer.valueOf(input.split("-")[2]),
 							Integer.valueOf(input.split("-")[3]), clientname);
 				}
-				
+				if (input.contains("apck")) {
+					client.registerInterestPackage(a, input.split("-")[1], input.split("-")[2], input.split("-")[3],
+							Integer.valueOf(input.split("-")[4]), Integer.valueOf(input.split("-")[5]), clientname);
+				}
+				if (input.contains("rpck")) {
+					client.removeInterestPackage(a, input.split("-")[1], input.split("-")[2], input.split("-")[3],
+							Integer.valueOf(input.split("-")[4]), Integer.valueOf(input.split("-")[5]), clientname);
+				}
+
 			}
 		} catch (RemoteException | NotBoundException e) {
 
