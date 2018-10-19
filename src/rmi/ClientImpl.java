@@ -111,8 +111,7 @@ public class ClientImpl extends UnicastRemoteObject implements Client {
 			throws RemoteException {
 		System.out.println("Buying package...");
 
-		buyFlight(a, flightid, seats);
-		buyRooms(a, hotelid, seats, startdate, enddate);
+		a.sellPackage(flightid, hotelid, seats, startdate, enddate);
 
 	}
 

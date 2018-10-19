@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ClientMain {
 
 	public static void main(String[] args) {
-
+		
 		String clientname = "name";
 		Client client = null;
 		try {
@@ -38,6 +38,7 @@ public class ClientMain {
 			client.registerInterestFlight(a, "sp", "cwb", 10, "name");
 
 			while (true) {
+
 				System.out.println("Waiting for client input");
 				Scanner scanner = new Scanner(System.in);
 				String input = scanner.nextLine();
@@ -45,6 +46,7 @@ public class ClientMain {
 					System.out.println("lookupallflights");
 					System.out.println("buyflight-id-seats");
 					System.out.println("buyrooms-id-seats-startdate-enddate");
+					System.out.println("buypackage-flight-id-hotelid-seats-startdate-enddate");
 					System.out.println("lookupallhotels");
 					System.out.println("lookupallpackages");
 					System.out.println("arif-to-from-price-clientname");
@@ -59,6 +61,11 @@ public class ClientMain {
 					client.buyRooms(a, Integer.valueOf(input.split("-")[1]), Integer.valueOf(input.split("-")[2]),
 							Long.valueOf(input.split("-")[3]), Long.valueOf(input.split("-")[4]));
 					continue;
+				}
+				if (input.contains("buypackage")) {
+					client.buyPackage(a, Integer.valueOf(input.split("-")[1]), Integer.valueOf(input.split("-")[2]),
+							Integer.valueOf(input.split("-")[3]), Long.valueOf(input.split("-")[4]),
+							Long.valueOf(input.split("-")[5]));
 				}
 				if (input.contains("lookupallflights")) {
 					client.lookUpFlights(a);
